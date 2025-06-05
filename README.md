@@ -1,70 +1,95 @@
 # FakeProfileDetection-Transformers
 
-## Overview
-
-This repository contains the implementation of a Transformer-based model for detecting fake profiles on Instagram, combining **BERT** for text and metadata understanding, **Vision Transformer (ViT)** for visual analysis, and **Particle Swarm Optimization (PSO)** for hyperparameter optimization. The approach is evaluated on a combination of the **Cresci-2017 dataset** and a **custom-labeled Instagram dataset**, addressing both textual and visual content to enhance detection performance.
-
----
-
-## Abstract
-
-The increasing presence of fake profiles on Instagram raises significant concerns regarding user security, privacy, and the credibility of online interactions. To address these challenges, this study introduces a Transformer-based detection model integrating BERT and ViT architectures, optimized using the Particle Swarm Optimization (PSO) algorithm. The dataset includes attributes such as posting frequency, engagement metrics, follower-following ratio, bio-section characteristics, account age, linguistic patterns, and visual content from profile and post images. Preprocessing steps such as null value handling, feature scaling, and TF-IDF-based text transformation ensure data consistency and effective representation. BERT captures complex relationships in textual and metadata attributes, while ViT enhances visual feature extraction, with PSO optimizing hyperparameters like learning rate, attention heads, batch size, and image patch size. Experimental results show that the BERT-ViT-PSO model achieves a 96.4% accuracy, outperforming conventional deep learning classifiers with precision (95.9%), recall (97.1%), and F1-score (96.5%), highlighting the effectiveness of Transformer architectures and bio-inspired optimization techniques in strengthening security and authenticity on social media platforms.
+## 1. Project Title  
+**FakeProfileDetection-Transformers**: A Multimodal Transformer-Based Framework for Detecting Fake Instagram Profiles Using BERT, ViT, and PSO Optimization.
 
 ---
 
-## Dataset
+## 2. Description  
 
-The dataset used in this study includes:
-- Cresci-2017 dataset (publicly available)
-- A custom-labeled dataset of Instagram profiles
-
-### Attributes:
-- Textual: bio, captions, hashtags
-- Visual: profile images, post banners
-- Metadata: followers, following, post frequency, engagement ratio, account age, etc.
+This project implements an advanced deep learning pipeline to detect fake profiles on Instagram by leveraging both textual and visual content. The framework employs **BERT** for understanding profile bios, captions, and metadata, and **Vision Transformer (ViT)** for extracting features from profile images and post visuals. A **Particle Swarm Optimization (PSO)** algorithm is used to fine-tune hyperparameters for optimal performance. The model is evaluated on a hybrid dataset comprising the public **Cresci-2017 dataset** and a custom-labeled Instagram dataset.
 
 ---
 
-## Preprocessing
+## 3. Dataset Information  
 
-The preprocessing phase involved the following:
+### Sources:
+- **Cresci-2017 Dataset** (Publicly available bot detection dataset): The Cresci-2017 Dataset is a publicly available and widely used benchmark dataset for social bot detection on Twitter. It was introduced by Stefano Cresci et al. in their 2017 research paper titled “The Paradigm-Shift of Social Spambots: Evidence, Theories, and Tools for the Arms Race”. This dataset is notable for its high-quality labeling and for capturing various types of automated and genuine Twitter behavior, making it a valuable resource for evaluating bot detection algorithms and studying online disinformation.
 
-- **Null value handling** for missing metadata or image paths
-- **Text preprocessing** including:
-  - Lowercasing
-  - Stopword removal
-  - Emoji and URL stripping
-  - Lemmatization
-  - Tokenization
-- **TF-IDF vectorization** applied to textual content for feature extraction
-- **Min-Max normalization** of numerical attributes
-- **Image preprocessing**: resizing (224×224), normalization, and patch generation for ViT
+- The **Cresci-2017 dataset** comprises five Twitter user classes, each representing distinct behavior profiles:
+
+- **Genuine Accounts**  
+  Real Twitter users manually collected and verified.  
+  Reflect natural human behavior such as varying tweet times, diverse content, and typical interactions.
+
+- **Social Spambots #1, #2, and #3**  
+  These are automated accounts designed to mimic real users while promoting content or manipulating online discourse.  
+  The three subgroups represent increasing levels of sophistication, from basic automation to more advanced evasion techniques (e.g., behavioral camouflage and content variability).
+
+- **Traditional Spambots**  
+  Classic spam accounts exhibiting overt bot-like behavior such as excessive posting, repetitive content, and suspicious URLs.
+
+- **Custom Instagram Dataset** (Manually labeled with genuine and fake profiles)
+
+### Key Attributes:
+- **Textual**: Biography text, post captions, hashtags  
+- **Visual**: Profile images, post banners  
+- **Metadata**:  
+  - Number of followers/following  
+  - Follower-following ratio  
+  - Posting frequency and engagement metrics  
+  - Account creation date and activity patterns  
+
+*Note: Due to privacy concerns, the custom dataset is not publicly released in this repository. Contact the author for academic use.*
 
 ---
 
-## Model Architecture
+## 4. Code Information  
 
-- **BERT**: For encoding textual and metadata features
-- **ViT**: For processing profile and post images
-- **PSO**: For optimizing hyperparameters including:
-  - Learning rate
-  - Batch size
-  - Number of attention heads
-  - Image patch size
+This repository contains the following components:
+- `Fake_Accounts/users.csv`: CSV file containing fake user profile data  
+- `Genuine_Accounts/users.csv`: CSV file containing genuine user profile data  
+- `bert_vit_ready_10k.csv`: Combined, preprocessed dataset ready for model input  
+- `Implementation_codes.ipynb`: Jupyter notebook implementing preprocessing, modeling, and evaluation  
+- `requirement.txt`: Python dependencies for setting up the environment  
+- `README.md`: Documentation file describing the project  
 
 ---
 
-## Requirements
+## 5. Preprocessing and Methodology  
+
+### Preprocessing Steps:
+- **Textual**:  
+  - Lowercasing, stopword removal  
+  - Lemmatization, tokenization  
+  - Emoji, URL, and HTML tag removal  
+  - TF-IDF transformation for feature extraction  
+
+- **Visual**:  
+  - Resizing to 224×224 pixels  
+  - RGB normalization  
+  - Image patch embedding for ViT  
+
+- **Metadata**:  
+  - Null value imputation  
+  - Min-Max normalization for numeric features  
+
+### Modeling Workflow:
+1. Feature extraction from BERT for text and ViT for images  
+2. Feature concatenation  
+3. PSO-based hyperparameter optimization  
+4. Training and evaluation with stratified cross-validation  
+
+---
+
+## 6. Usage Instructions
+
+Follow the steps below to set up and run the project:
+
+---
+
+### 1. Clone the Repository
 
 ```bash
-python>=3.8  
-transformers  
-torch  
-torchvision  
-scikit-learn  
-pandas  
-numpy  
-opencv-python  
-matplotlib  
-nltk  
-
+git clone https://github.com/AlaaAsimQaffas/FakeProfileDetection-Transformers.git
+cd FakeProfileDetection-Transformers
