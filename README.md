@@ -93,3 +93,27 @@ Follow the steps below to set up and run the project:
 ```bash
 git clone https://github.com/AlaaAsimQaffas/FakeProfileDetection-Transformers.git
 cd FakeProfileDetection-Transformers
+
+### 2. Install Dependencies
+
+Ensure you have Python ≥ 3.8 installed. Then, install the required libraries:
+
+```bash
+pip install -r requirement.txt
+
+### 3. Prepare the Dataset
+Place the users.csv files in the following directories:
+
+```bash
+Fake_Accounts/users.csv  
+Genuine_Accounts/users.csv
+
+### 4. Run the Implementation cells one by one in jupyter notebook file (.ipynb)
+
+```bash
+Implementation_codes.ipynb
+
+
+
+
+
