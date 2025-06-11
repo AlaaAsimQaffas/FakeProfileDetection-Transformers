@@ -82,36 +82,77 @@ This repository contains the following components:
 
 ---
 
-## 6. Usage Instructions
+# Fake Profile Detection using Transformers
 
-Follow the steps below to set up and run the project:
+## 🔧 Usage Instructions
 
----
+Follow the steps below to set up and run the Fake Profile Detection using Transformers project.
 
-### 1. Clone the Repository
+### 📁 1. Clone the Repository
+
+First, clone the repository and navigate into the project directory:
 
 ```bash
 git clone https://github.com/AlaaAsimQaffas/FakeProfileDetection-Transformers.git
 cd FakeProfileDetection-Transformers
+```
 
-### 2. Install Dependencies
+---
 
-Ensure you have Python ≥ 3.8 installed. Then, install the required libraries:
+### 📦 2. Install Dependencies
+
+Ensure that **Python 3.8 or later** is installed on your system. It is recommended to use a virtual environment for managing dependencies.
+
+Install the required Python libraries using `pip`:
 
 ```bash
 pip install -r requirement.txt
+```
 
-### 3. Prepare the Dataset
-Place the users.csv files in the following directories:
+> 💡 Tip: If you're using a virtual environment, activate it before running the above command.
+
+---
+
+### 📂 3. Prepare the Dataset
+
+You need to manually place the `users.csv` files into the appropriate directories before running the implementation.
+
+Ensure the following directory structure:
+
+```
+FakeProfileDetection-Transformers/
+├── Fake_Accounts/
+│   └── users.csv
+├── Genuine_Accounts/
+│   └── users.csv
+```
+
+Place your respective fake and genuine user datasets in the `users.csv` files as shown above.
+
+---
+
+### 🚀 4. Run the Jupyter Notebook
+
+Launch Jupyter Notebook and open the implementation file:
 
 ```bash
-Fake_Accounts/users.csv  
-Genuine_Accounts/users.csv
+jupyter notebook
+```
 
-### 4. Run the Implementation cells one by one in jupyter notebook file (.ipynb)
+Then, open and execute the following notebook cell by cell:
 
-```bash
+```
 Implementation_codes.ipynb
+```
+
+> 📌 Make sure the dataset is properly loaded and all dependencies are resolved before running each cell.
+
+---
+
+### ✅ Done!
+
+You should now be able to run the full implementation for detecting fake profiles using transformer models. For any issues or enhancements, feel free to raise an issue or contribute to the repository.
+
 
 
 
