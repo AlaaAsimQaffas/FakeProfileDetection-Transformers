@@ -82,9 +82,36 @@ This repository contains the following components:
 
 ---
 
-# Fake Profile Detection using Transformers
 
-## 🔧 Usage Instructions
+## 6. 📚 Citations
+
+If you use this dataset or model in your research, please cite the following:
+
+```bibtex
+@article{yourstudy2025fakeprofile,
+  title={Social media Fake Profile Detection using Transformer-based Model and Parameters Optimization},
+  author={Alaa Asim Qaffas},
+  journal={PeerJ Computer Science},
+  year={2025},
+  publisher={PeerJ, Inc.}
+}
+```
+
+Additionally, refer to the Cresci-2017 dataset if used:
+
+```bibtex
+@inproceedings{cresci2017paradigm,
+  title={The paradigm-shift of social spambots: Evidence, theories, and tools for the arms race},
+  author={Cresci, Stefano and Di Pietro, Roberto and Petrocchi, Marinella and Spognardi, Angelo and Tesconi, Maurizio},
+  booktitle={Proceedings of the 26th international conference on World Wide Web companion},
+  pages={963--972},
+  year={2017}
+}
+```
+
+---
+
+## 7. 🔧 Usage Instructions
 
 Follow the steps below to set up and run the Fake Profile Detection using Transformers project.
 
